@@ -1,0 +1,22 @@
+@mixin button-mix($default, $hover, $active) {
+  background: $default;
+  transition: 0.4s;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 25px;
+  font-style: normal;
+  font-weight: 700;
+  font-family: 'Century Gothic';
+  text-decoration: none;
+  color: #FFF;
+  border-radius: 80px;
+
+  &:hover {
+    background: $hover;
+  }
+
+  &:active {
+    background: $active;
+  }
+}

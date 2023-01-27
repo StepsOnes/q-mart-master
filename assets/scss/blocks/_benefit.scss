@@ -1,0 +1,43 @@
+@import "../helpers/vars";
+
+.benefit {
+  position: relative;
+  background: $section-blue;
+  padding: 100px 0;
+}
+
+.benefit-container {
+  position: relative;
+}
+
+.benefit-img {
+  bottom: -40px;
+  right: 10%;
+  position: absolute;
+  z-index: -1;
+}
+
+.benefit-cards {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.benefit-card {
+  border: 1px solid #DDDDDD;
+  border-radius: 30px 0px;
+  padding: 24px 24px 91px;
+  max-width: 410px;
+  max-height: 214px;
+  position: relative;
+}
+
+.benefit-card__title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.benefit-card__text {
+  margin-top: 12px;
+}

@@ -1,0 +1,59 @@
+@import "../helpers/vars";
+@import "../helpers/mixin";
+
+.navbar-top {
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  background: #FFFFFF;
+}
+
+.navbar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-group {
+  display: flex;
+  gap: 16px;
+}
+
+.navbar-button {
+  color: #FFF;
+  padding: 12px 20px;
+  box-shadow: -4px -4px 16px rgba(255, 255, 255, 0.25), 4px 4px 16px rgba(0, 0, 0, 0.04);
+  border-radius: 80px;
+  @include button-mix($blue-color, #226BB5, #0E4277);
+}
+
+.menu-btn {
+  width: 49px;
+  height: 49px;
+  background: #FFFFFF;
+  box-shadow: -1px -1px 4px rgba(239, 239, 239, 0.25), 2px 2px 16px rgba(0, 0, 0, 0.06);
+  border-radius: 80px;
+  position: relative;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    width: 24.75px;
+    height: 2px;
+    background: #292D32;
+    border-radius: 3px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &:nth-child(2) {
+      top: calc(50% - 7px);
+    }
+
+    &:nth-child(3) {
+      top: calc(50% + 7px);
+    }
+  }
+}

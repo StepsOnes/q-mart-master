@@ -1,0 +1,129 @@
+@import "../helpers/mixin";
+@import "../helpers/vars";
+
+.header {
+  padding-top: 200px;
+  position: relative;
+  padding-bottom: 300px;
+}
+
+.header-container {
+  position: relative;
+}
+
+.header-title {
+  max-width: 950px;
+  margin-bottom: 20px;
+}
+
+.header-subtitle {
+  max-width: 672px;
+  margin-bottom: 30px;
+
+  span {
+    font-weight: bold;
+  }
+}
+
+.header-button {
+  @include button-mix($blue-color, #226BB5, #0E4277);
+  display: flex;
+  padding: 6px 40px 6px 6px;
+  max-width: 386px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.header-circle {
+  width: 648px;
+  height: 648px;
+  position: absolute;
+  top: 130px;
+  left: -20px;
+  z-index: -1;
+}
+
+.bg-block-header {
+  position: absolute;
+  z-index: -1;
+  right: 0px;
+  top: 50px;
+}
+
+.header-images {
+  position: absolute;
+  right: 10px;
+  top: 140px;
+  width: 604px;
+  height: 604px;
+}
+
+.header-box__woman {
+  top: 60px;
+  right: 59px;
+}
+
+.header-box__man {
+  top: 281px;
+  right: 361px;
+}
+
+.header-box__dispenser {
+  right: 98px;
+  width: 82.6px;
+  height: 82.6px;
+  background: linear-gradient(180deg, #53EAFF 0%, #1D9FC8 100%);
+  border-radius: 30px 0px;
+
+  img {
+    position: absolute;
+    top: -20px;
+    right: 9px;
+  }
+}
+
+.header-box__builders {
+  bottom: 30px;
+  left: -20px;
+}
+
+.header-img__green-figure_01 {
+  width: 66.29px;
+  height: 92.12px;
+  left: 40%;
+  transform: translateX(-40%) rotate(-90deg);
+}
+
+.header-img__green-figure_02 {
+  bottom: -70px;
+  left: 200px;
+}
+
+.header-box__drill {
+  width: 167.13px;
+  height: 162px;
+  background: linear-gradient(133.21deg, #67B8B8 0%, #179FCA 100%);
+  border-radius: 30px 0px;
+  bottom: 0;
+  right: 49px;
+
+  img {
+    position: absolute;
+    bottom: 10px;
+  }
+}
+
+.header-box__musical-column {
+  width: 116.08px;
+  height: 85.33px;
+  background: linear-gradient(113.64deg, #FF6669 0%, #E23070 100%);
+  border-radius: 30px 0px;
+  bottom: 50px;
+  left: 250px;
+}
+
+.header-img__purple-figure {
+  bottom: 250px;
+  left: 40px;
+}

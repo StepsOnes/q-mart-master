@@ -1,0 +1,33 @@
+@import "../helpers/mixin";
+
+.main {
+  position: relative;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #292D32;
+  opacity: 0.2;
+  margin-bottom: 10px;
+}
+
+.main-title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  color: #000;
+  margin-bottom: 40px;
+
+  span {
+    color: #469CF3;
+  }
+}
+
+.form-button {
+  @include button-mix($blue-color, #226BB5, #0E4277);
+  display: block;
+  margin: 0 auto;
+  padding: 20px 32px;
+}
