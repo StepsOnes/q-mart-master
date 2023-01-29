@@ -75,6 +75,11 @@
   &:-ms-input-placeholder { /* Internet Explorer 10+ */
     color: #D4D5D6;
   }
+
+  &.error-inp {
+    color: #EB5757;
+    background: linear-gradient(0deg, rgba(235, 87, 87, 0.05), rgba(235, 87, 87, 0.05)), #FFFFFF;
+  }
 }
 
 .form-group {
@@ -102,6 +107,10 @@
   justify-content: center;
   position: relative;
   background: #1B83ED;
+
+  &.error {
+    border: 2px solid #EB5757;
+  }
 }
 
 .checkbox-wrapper input {

@@ -9,12 +9,18 @@ menuItems.forEach((menuItem) => {
 
 function showMenu() {
     let menu = document.getElementById('menu');
+    document.getElementById('menu-btn').classList.toggle('active')
     menu.classList.toggle('visible');
+
+    if (window.innerWidth <= 1200) {
+        document.body.classList.toggle('lock');
+    }
 }
 
 function hideMenu() {
     let menu = document.getElementById('menu');
     menu.classList.remove('visible');
+    document.body.classList.remove('lock');
 }
 
 function spawnAnimation() {
@@ -84,6 +90,7 @@ const clearValues = () => {
 
 const ERROR_ClASS = 'error-inp';
 const popUpInputs = Array.from(document.querySelectorAll('.popup-inp'));
+const footerInputs = Array.from(document.querySelectorAll('.footer-inp'));
 
 popUpInputs.forEach(input => {
     input.onfocus = () => {
@@ -91,8 +98,16 @@ popUpInputs.forEach(input => {
     };
 });
 
+footerInputs.forEach(input => {
+    input.onfocus = () => {
+        input.classList.remove(ERROR_ClASS);
+    }
+});
+
 const EMAIL_REGEXP = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 const NAME_REGEXP = /[А-Яа-я]{2,10}/;
+const CITY_REGEXP = /[А-Яа-я]{2,20}/;
+
 
 const isEmailValid = (email) => {
     return EMAIL_REGEXP.test(email);
@@ -108,6 +123,10 @@ const isPhoneValid = (phone) => {
 
 const addError = (element) => {
     return element.classList.add(ERROR_ClASS);
+}
+
+const isCityValid = (city) => {
+    return CITY_REGEXP.test(city)
 }
 
 const popUpForm_01 = document.getElementById('popUp-form_01');
@@ -131,6 +150,22 @@ popUpForm_01.addEventListener('submit', (event) => {
         addError(popupEmail_01);
         return false
     }
+
+    axios.post('../../EmailControllers/PopUpForm_01.php', {
+        "popup_name-01": popupName_01.value,
+        "popup_phone-01": popupPhone_01.value,
+        "popup_email-01": popupEmail_01.value
+    })
+        .then(res => {
+            if (res) {
+                console.log(res);
+            }
+        })
+        .catch(err => {
+            if (!err) {
+                alert("Извините, произошла ошибка, попробуйте позже")
+            }
+        })
 
     closeForm('fs1');
     clearValues();
@@ -158,6 +193,22 @@ popUpForm_02.addEventListener('submit', (event) => {
         return false
     }
 
+    axios.post('../../EmailControllers/PopUpForm_02.php', {
+        "popup_name-02": popupName_02.value,
+        "popup_phone-02": popupPhone_02.value,
+        "popup_email-02": popupEmail_02.value
+    })
+        .then(res => {
+            if (res) {
+                console.log(res);
+            }
+        })
+        .catch(err => {
+            if (!err) {
+                alert("Извините, произошла ошибка, попробуйте позже")
+            }
+        })
+
     closeForm('fs2');
     clearValues();
 });
@@ -183,6 +234,22 @@ popUpForm_03.addEventListener('submit', (event) => {
         addError(popupEmail_03);
         return false
     }
+
+    axios.post('../../EmailControllers/PopUpForm_03.php', {
+        "popup_name-03": popupName_03.value,
+        "popup_phone-03": popupPhone_03.value,
+        "popup_email-03": popupEmail_03.value
+    })
+        .then(res => {
+            if (res) {
+                console.log(res);
+            }
+        })
+        .catch(err => {
+            if (!err) {
+                alert("Извините, произошла ошибка, попробуйте позже")
+            }
+        })
 
     closeForm('fs3');
     clearValues();
@@ -211,8 +278,84 @@ popUpForm_04.addEventListener('submit', (event) => {
         return false
     }
 
+    axios.post('../../EmailControllers/PopUpForm_04.php', {
+        "popup_name-04": popupName_04.value,
+        "popup_phone-04": popupPhone_04.value,
+        "popup_email-04": popupEmail_04.value
+    })
+        .then(res => {
+            closeForm('fs4');
+            console.log(res);
+        })
+        .catch(err => {
+            if (!err) {
+                alert("Извините, произошла ошибка, попробуйте позже")
+            }
+        })
+
     closeForm('fs4');
     clearValues();
+});
+
+const footerForm = document.getElementById('footer-form');
+footerForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const footerName = document.getElementById('footer_name');
+    const footerPhone = document.getElementById('footer_phone');
+    const footerEmail = document.getElementById('footer_email');
+    const footerCity = document.getElementById('footer_city');
+    const checkBoxWrapper = document.querySelector('.checkbox-wrapper')
+    const checkBox = document.getElementById('modern-checkbox');
+
+    if (!isNameValid(footerName.value)) {
+        addError(footerName);
+        return false
+    }
+
+    if (!isPhoneValid(footerPhone.value)) {
+        addError(footerPhone);
+        return false
+    }
+
+    if (!isEmailValid(footerEmail.value)) {
+        addError(footerEmail);
+        return false
+    }
+
+    if (!isCityValid(footerCity.value)) {
+        console.log(footerCity.value)
+        addError(footerCity);
+        return false
+    }
+
+    if (!checkBox.checked) {
+        checkBoxWrapper.classList.add('error')
+        return false
+    }
+
+    axios.post('../../EmailControllers/FooterForm.php', {
+        "footer_name": footerName.value,
+        "footer_phone": footerPhone.value,
+        "footer_email": footerEmail.value,
+        "footer_city": footerCity.value
+    })
+        .then(res => {
+            if (res) {
+                console.log(res);
+            }
+        })
+        .catch(err => {
+            if (!err) {
+                alert("Извините, произошла ошибка, попробуйте позже")
+            }
+        });
+
+    document.querySelectorAll('.footer-inp').forEach(item => {
+        item.value = "";
+    });
+
+    checkBoxWrapper.classList.remove('error');
+    checkBox.checked = false;
 });
 
 

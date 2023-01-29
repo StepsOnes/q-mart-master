@@ -29,8 +29,52 @@ $mail->isHTML(true);                                  // Set email format to HTM
 
 
 
-$mail->Subject = 'Заявка с тестового сайта';
-$mail->Body = 'name';
+$str = "
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Title</title>
+    <style>
+        body{margin: 0; background: #F9FAFC}
+        h1{font-family: Arial}
+        .container{max-width: 1100px;margin: 0 auto;}
+        table.iksweb{text-decoration: none;border-collapse:collapse;width:100%;text-align:center;}
+        table.iksweb th{font-weight:normal;font-size:14px; color:#ffffff;background-color:#354251;}
+        table.iksweb td{font-size:13px;color:#354251;}
+        table.iksweb td,table.iksweb th{white-space:pre-wrap;padding:10px 5px;line-height:13px;vertical-align: middle;border: 1px solid #354251;}    table.iksweb tr:hover{background-color:#f9fafb}
+        table.iksweb tr:hover td{color:#354251;cursor:default;}
+    </style>
+</head>
+<body>
+
+<div class='container'>
+    <h1>Запрос бизнес модели от пользователя</h1>
+
+    <table class='iksweb'>
+        <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Телефон</th>
+            <th>Почта</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>$name</td>
+            <td>$phone</td>
+            <td>$email</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
+";
+
+
+$mail->Subject = 'Запрос бизнес модели от пользователя';
+$mail->Body = $str;
 $mail->AltBody = '';
 
 if(!$mail->send()) {
@@ -38,5 +82,3 @@ if(!$mail->send()) {
 } else {
     echo 'success';
 }
-
-?>

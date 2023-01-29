@@ -70,7 +70,7 @@ $str = "
 </html>
 ";
 
-$mail->Subject = 'Заявка с тестового сайта';
+$mail->Subject = 'Данные от пользователя с сайта Q-Mart';
 $mail->Body = $str;
 $mail->AltBody = '';
 
@@ -80,4 +80,4 @@ if(!$mail->send()) {
     echo 'success';
 }
 
-?>
+

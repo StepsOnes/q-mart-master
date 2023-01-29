@@ -8,6 +8,11 @@
   width: 100%;
   z-index: 9999;
   background: #FFFFFF;
+
+  @include _992 {
+    border-bottom: 1px solid rgba(41, 45, 50, 0.1);
+    padding: 12px 0 11px 0;
+  }
 }
 
 .navbar-row {
@@ -27,6 +32,12 @@
   box-shadow: -4px -4px 16px rgba(255, 255, 255, 0.25), 4px 4px 16px rgba(0, 0, 0, 0.04);
   border-radius: 80px;
   @include button-mix($blue-color, #226BB5, #0E4277);
+
+  @include _992 {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 9px 13px;
+  }
 }
 
 .menu-btn {
@@ -47,6 +58,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: 0.2s all ease-out;
 
     &:nth-child(2) {
       top: calc(50% - 7px);
@@ -54,6 +66,55 @@
 
     &:nth-child(3) {
       top: calc(50% + 7px);
+    }
+  }
+
+  &.active {
+    span:nth-child(1) {
+      width: 0;
+    }
+
+    span:nth-child(2) {
+      top: 50%;
+      -webkit-transform: translate(-50%) rotate(45deg);
+      transform: translate(-50%) rotate(45deg);
+    }
+
+    span:nth-child(3) {
+      top: 50%;
+      -webkit-transform: translate(-50%) rotate(-45deg);
+      transform: translate(-50%) rotate(-45deg);
+    }
+  }
+
+  @include _992 {
+    width: 37px;
+    height: 37px;
+
+    span {
+      width: 16px;
+
+      &:nth-child(2) {
+        top: calc(50% - 5px);
+      }
+
+      &:nth-child(3) {
+        top: calc(50% + 5px);
+      }
+    }
+  }
+}
+
+.logo {
+  img {
+    width: 169px;
+    height: 53px;
+  }
+
+  @include _992 {
+    img {
+      width: 115px;
+      height: 36px;
     }
   }
 }

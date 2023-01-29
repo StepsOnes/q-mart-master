@@ -1,5 +1,8 @@
 @import "../helpers/vars";
+@import "../helpers/mixin";
 @import "../../fonts/stylesheet";
+
+
 *,
 *::after,
 *::before {
@@ -16,6 +19,8 @@ footer.footer {
 body,
 html {
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .lock {
@@ -29,6 +34,11 @@ body {
   line-height: 25px;
   color: $main-color;
   background: #FFFFFF;
+
+  @include _992 {
+    font-size: 15px;
+    line-height: 18px;
+  }
 }
 
 .container {
@@ -47,6 +57,11 @@ body {
   span {
     color: #469CF3;
   }
+
+  @include _992 {
+    font-size: 24px;
+    line-height: 29px;
+  }
 }
 
 .circle {
@@ -60,6 +75,12 @@ body {
   background: url("../../assets/img/bg/circ-bg.svg");
   width: 604px;
   height: 604px;
+  background-size: cover;
+
+  @include _1200 {
+    width: 304px;
+    height: 304px;
+  }
 }
 
 .abs {

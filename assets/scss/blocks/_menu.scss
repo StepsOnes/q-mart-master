@@ -1,4 +1,5 @@
 @import "../helpers/vars";
+@import "../helpers/mixin";
 
 .menu {
   width: 100%;
@@ -12,12 +13,21 @@
 
 
   &.visible {
-    transform: translateY(54%);
+    transform: translateY(59%);
+
+    @include _1200 {
+      transform: translateY(0%);
+    }
   }
 
   &.visible .menu-list {
     li > a {
       opacity: 1;}
+  }
+
+  @include _1200 {
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -39,6 +49,22 @@
     &:hover {
       color: $blue-color;
     }
+  }
+
+  @include _1200 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  @include _992 {
+    font-size: 20px;
+    line-height: 25px;
   }
 }
 

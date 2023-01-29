@@ -1,6 +1,13 @@
+@import "../helpers/mixin";
+@import "../helpers/vars";
+
 .offer {
   padding: 0 0 100px 0;
   position: relative;
+
+  @include _992 {
+    padding-bottom: 60px;
+  }
 }
 
 .offer-row {
@@ -10,6 +17,13 @@
 }
 
 .offer-col {
+}
+
+.offer-col__img {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 .offer-col--padding {
@@ -25,6 +39,10 @@
 
   span {
     font-weight: 700;
+  }
+
+  @include _992 {
+    margin-bottom: 16px;
   }
 }
 
@@ -43,6 +61,10 @@
   position: absolute;
   bottom: -75px;
   z-index: -1;
+
+  @include _1200 {
+    display: none;
+  }
 }
 
 .circle__offer {
@@ -53,4 +75,8 @@
   left: 50%;
   transform: translateX(-50%);
   top: 200px;
+
+  @include _1200 {
+    display: none;
+  }
 }

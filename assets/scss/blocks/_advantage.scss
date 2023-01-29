@@ -1,3 +1,5 @@
+@import "../helpers/mixin";
+
 .advantage {
   padding: 160px 0 80px 0;
   position: relative;
@@ -10,6 +12,10 @@
   top: 40px;
   right: 40px;
   z-index: -1;
+
+  @include _1200 {
+    display: none;
+  }
 }
 
 .advantage-row {
@@ -30,6 +36,12 @@
 
 .advantage-col__subtitle {
   margin-top: 12px;
+}
+
+.advantage-table {
+  @include _1200 {
+    display: none;
+  }
 }
 
 .advantage-table__values {
@@ -208,6 +220,95 @@
 
 .advantage__form-button {
   margin-top: 100px;
+
+  &--none {
+    @include _1200 {
+      display: none;
+    }
+  }
+
+  &--active {
+    display: none;
+
+    @include _1200 {
+      display: block;
+    }
+  }
+
+  @include _1200 {
+    margin-top: 20px;
+  }
+}
+
+.advantage-items {
+  display: none;
+
+  @include _1200 {
+    display: block;
+  }
+}
+
+.advantage-item {
+  width: 100%;
+}
+
+.advantage-item__header {
+  width: 100%;
+  padding: 12px 16px;
+}
+
+.advantage-item__header--blue {
+  background: rgba(70, 156, 243, 0.15);
+}
+
+.advantage-item__header--yellow {
+  background: #F5CA5C;
+}
+
+.advantage-item__header__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.advantage-item__content {
+  padding: 12px 16px;
+}
+
+.advantage-item__content--blue {
+  background: rgba(70, 156, 243, 0.05);
+}
+
+.advantage-item__content--yellow {
+  background: rgba(245, 202, 92, 0.15);
+}
+
+.advantage-item__content__body {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 185px);
+  row-gap: 16px;
+
+  @include _578 {
+    grid-template-columns: repeat(auto-fill, 155px);
+  }
+}
+
+.advantage-item__content__body-item {
+}
+
+.advantage-item__content__body-item__title {
+  font-size: 15px;
+  line-height: 18px;
+  color: #FFFFFF;
+  mix-blend-mode: difference;
+  opacity: 0.2;
+}
+
+.advantage-item__content__body-item__text {
+  font-size: 15px;
+  line-height: 18px;
+  color: #FFFFFF;
+  mix-blend-mode: difference;
 }
 
 

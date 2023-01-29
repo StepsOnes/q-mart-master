@@ -10,7 +10,6 @@ popUpButtons.forEach((button) => {
         event.preventDefault();
         const form = document.getElementById(button.dataset.form);
         form.classList.add('visible');
-        bodyLock();
     });
 });
 
@@ -32,7 +31,6 @@ function exit(e) {
         document.querySelectorAll('.form-popup__wrapper').forEach(item => {
             item.classList.remove('visible');
         });
-        bodyUnLock();
         getInitialIndicators();
     }
 }
