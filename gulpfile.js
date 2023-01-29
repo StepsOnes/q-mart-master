@@ -31,7 +31,7 @@ function build_styles() {
     ])
         .pipe(sourcemaps.init({}))
         .pipe(sassCompiler({
-            outputStyle: 'expanded', // compressed
+            outputStyle: 'compressed', // compressed
         }, false).on('error', sassCompiler.logError))
         .pipe(autoprefixer())
         .pipe(sourcemaps.write('.', {}))

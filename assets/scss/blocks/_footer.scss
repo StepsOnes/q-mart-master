@@ -1,8 +1,13 @@
 @import "../helpers/vars";
+@import "../helpers/mixin";
 
 .footer {
   padding-top: 80px;
   background: $section-blue;
+
+  @include _992 {
+    padding-top: 50px;
+  }
 }
 
 .footer-box {
@@ -12,6 +17,11 @@
   border-radius: 100px 100px 0 0;
   color: #FFF;
   padding: 67px 52px 40px 52px;
+
+  @include _992 {
+    border-radius: 40px 40px 0 0;
+    padding: 24px 16px;
+  }
 }
 
 .footer-row {
@@ -33,24 +43,41 @@
   font-size: 36px;
   line-height: 44px;
   margin-bottom: 24px;
+
+  @include _992 {
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 16px;
+  }
 }
 
 .footer-subtitle {
   margin-bottom: 67px;
+
+  @include _992 {
+    margin-bottom: 16px;
+  }
 }
 
 .footer-form {
+  max-width: 540px;
 
+  @include _992 {
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 .footer-label {
   font-weight: 700;
   color: #FFF;
+  width: 100%;
+  max-width: 100%;
 }
 
 .footer-inp {
   display: block;
-  min-width: 540px;
+  width: 100%;
   background: #FFFFFF;
   border-radius: 90px;
   border: none;
@@ -93,6 +120,12 @@
   max-width: 450px;
   font-size: 16px;
   line-height: 20px;
+
+  @include _992 {
+    font-size: 12px;
+    line-height: 15px;
+    max-width: 300px;
+  }
 }
 
 
@@ -154,4 +187,19 @@
   font-family: 'Century Gothic';
   font-size: 20px;
   line-height: 25px;
+  transition: 0.4s;
+
+  &:hover {
+    background: #ED682A;
+  }
+
+  &:active {
+    background: #e84f08;
+  }
+}
+
+.footer-arrow {
+  @include _992 {
+    display: none;
+  }
 }

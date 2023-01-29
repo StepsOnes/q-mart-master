@@ -1,6 +1,13 @@
+@import "../helpers/mixin";
+@import "../helpers/vars";
+
 .partners-benefit {
   padding: 160px 0 80px 0;
   position: relative;
+
+  @include _992 {
+    padding: 60px 0 50px 0;
+  }
 }
 
 .partners-benefit__row {
@@ -15,20 +22,38 @@
   box-shadow: -4px -4px 16px rgba(255, 255, 255, 0.25), 4px 4px 16px rgba(0, 0, 0, 0.12);
   border-radius: 30px 0px;
   padding: 36px 40px;
-  min-width: 800px;
+  max-width: 800px;
+  width: 100%;
   position: relative;
+
+  @include _578 {
+    padding: 20px;
+  }
 }
 
 .partners-benefit__arr-figure {
   position: absolute;
   top: -50px;
   right: 0;
+
+  @include _578 {
+    width: 43px;
+    height: 35px;
+    top: -36px;
+    right: 0;
+  }
 }
 
 .partners-benefit__box__title {
   font-size: 24px;
   line-height: 29px;
   margin-bottom: 28px;
+
+  @include _578 {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 12px;
+  }
 }
 
 .partners-benefit__box__list {
@@ -46,6 +71,22 @@
       left: -6px;
       top: 13px;
     }
+
+    @include _578 {
+      margin-bottom: 16px;
+
+      &::before {
+        left: -4px;
+        top: 9px;
+      }
+    }
+  }
+}
+
+.partners-benefit__img {
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
 
@@ -56,4 +97,8 @@
   left: -100px;
   top: 100px;
   z-index: -1;
+
+  @include _992 {
+    display: none;
+  }
 }

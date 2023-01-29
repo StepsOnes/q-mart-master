@@ -43,4 +43,9 @@
   display: block;
   margin: 0 auto;
   padding: 20px 32px;
+
+  @include _578 {
+    max-width: 343px;
+    width: 100%;
+  }
 }

@@ -20,6 +20,7 @@ function showMenu() {
 function hideMenu() {
     let menu = document.getElementById('menu');
     menu.classList.remove('visible');
+    document.getElementById('menu-btn').classList.remove('active')
     document.body.classList.remove('lock');
 }
 
@@ -65,6 +66,7 @@ function inputMask() {
     let mask5 = IMask(element5, maskOptions);
 }
 
+
 const gridElement = document.querySelector('.grid');
 let msnry = new Masonry( gridElement, {
     // options
@@ -73,6 +75,8 @@ let msnry = new Masonry( gridElement, {
     gutter: 40,
     percentPosition: true,
 });
+
+
 
 inputMask();
 

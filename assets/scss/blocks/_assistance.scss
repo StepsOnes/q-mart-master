@@ -1,6 +1,13 @@
+@import "../helpers/mixin";
+@import "../helpers/vars";
+
 .assistance {
   padding: 80px 0 160px 0;
   position: relative;
+
+  @include _992 {
+    padding: 50px 0 60px 0;
+  }
 }
 
 .assistance-faq {
@@ -14,10 +21,19 @@
   font-weight: 700;
   font-size: 24px;
   line-height: 29px;
+
+  @include _578 {
+    font-size: 16px;
+    line-height: 20px;
+  }
 }
 
 .assistance-faq__answer {
   margin-top: 20px;
+
+  @include _578 {
+    margin-top: 8px;
+  }
 }
 
 .bg-block__assistance {
@@ -25,6 +41,12 @@
   z-index: -2;
   right: 100px;
   top: 0;
+
+  @include _992 {
+    right: auto;
+    left: 0;
+    top: -56px;
+  }
 }
 
 .circle__assistance {
@@ -42,11 +64,22 @@
   justify-content: center;
   align-items: center;
 
+  @include _992 {
+    width: 216px;
+    height: 216px;
+    top: -75px;
+    right: -75px;
+  }
+
   div {
     border-radius: 50%;
     width: 315px;
     height: 315px;
     background: rgba(50, 193, 146, 0.2);
     box-shadow: 20px 20px 30px rgba(70, 156, 243, 0.02), -20px -20px 30px rgba(236, 236, 236, 0.25), inset 16px 16px 30px rgba(70, 156, 243, 0.03), inset -16px -16px 30px rgba(255, 255, 255, 0.25);
+    @include _992 {
+      width: 155px;
+      height: 154px;
+    }
   }
 }

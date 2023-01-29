@@ -1,8 +1,13 @@
 @import "../helpers/mixin";
+@import "../helpers/vars";
 
 .advantage {
   padding: 160px 0 80px 0;
   position: relative;
+
+  @include _992 {
+    padding: 60px 0 50px 0;
+  }
 }
 
 .circle__advantage {
@@ -23,11 +28,20 @@
   gap: 60px;
   flex-wrap: wrap;
   margin-bottom: 60px;
+
+  @include _992 {
+    gap: 20px;
+    margin-bottom: 20px;
+  }
 }
 
 .advantage-col {
   margin-top: 20px;
   max-width: 610px;
+
+  @include _992 {
+    margin: 0;
+  }
 }
 
 .advantage-col__title {

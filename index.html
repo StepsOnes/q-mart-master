@@ -10,6 +10,7 @@
     <link rel="icon" href="favicon/favicon-16.svg">
     <link rel="stylesheet" href="assets/css/main.css">
     <title>Q-mart</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
 </head>
 <body>
 
@@ -59,7 +60,7 @@
             </li>
 
             <li>
-                <a class="menu-item" href="#responsibility">Шаги</a>
+                <a class="menu-item" href="#company-steps">Шаги</a>
             </li>
         </ul>
     </div>
@@ -170,9 +171,7 @@
             <div class="benefit-cards">
                 <div class="benefit-card">
                     <h3 class="benefit-card__title">
-                        Удобное расположение
-                        <br>
-                        у дома
+                        Удобное расположение у дома
                     </h3>
 
                     <p class="benefit-card__text">
@@ -997,7 +996,7 @@
     </section>
 
     <section class="company-steps">
-        <div class="container">
+        <div  class="container">
             <h1 id="company-steps" class="section-title">
                 Путь к вершине
             </h1>
@@ -1020,7 +1019,10 @@
                                 </p>
                             </div>
 
-                            <img src="assets/img/main/steps-company/01.png" alt="Вы заключаете договор франшизы">
+                            <div class="step-card__img step-card__img--146">
+                                <img class="m-none" src="assets/img/main/steps-company/01.png" alt="Вы заключаете договор франшизы">
+                                <img class="active" src="assets/img/main/steps-company/01-m.png" alt="Вы заключаете договор франшизы">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1041,7 +1043,10 @@
                                 </p>
                             </div>
 
-                            <img src="assets/img/main/steps-company/02.png" alt="Вы заключаете договор франшизы">
+                            <div class="step-card__img">
+                                <img class="m-none" src="assets/img/main/steps-company/02.png" alt="Вы заключаете договор франшизы">
+                                <img class="active" src="assets/img/main/steps-company/02-m.png" alt="Вы заключаете договор франшизы">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1059,7 +1064,10 @@
                                 </p>
                             </div>
 
-                            <img src="assets/img/main/steps-company/03.png" alt="Вы заключаете договор франшизы">
+                            <div class="step-card__img ">
+                                <img class="m-none" src="assets/img/main/steps-company/03.png" alt="Вы заключаете договор франшизы">
+                                <img class="active" src="assets/img/main/steps-company/03-m.png" alt="Вы заключаете договор франшизы">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1077,7 +1085,10 @@
                                 </p>
                             </div>
 
-                            <img src="assets/img/main/steps-company/04.png" alt="Вы заключаете договор франшизы">
+                            <div class="step-card__img ">
+                                <img class="m-none" src="assets/img/main/steps-company/04.png" alt="Вы заключаете договор франшизы">
+                                <img class="active" src="assets/img/main/steps-company/04-m.png" alt="Вы заключаете договор франшизы">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1095,7 +1106,10 @@
                                 </p>
                             </div>
 
-                            <img src="assets/img/main/steps-company/05.png" alt="Вы заключаете договор франшизы">
+                            <div class="step-card__img ">
+                                <img class="m-none" src="assets/img/main/steps-company/05.png" alt="Вы заключаете договор франшизы">
+                                <img class="active" src="assets/img/main/steps-company/05-m.png" alt="Вы заключаете договор франшизы">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1114,7 +1128,10 @@
                                 </p>
                             </div>
 
-                            <img src="assets/img/main/steps-company/06.png" alt="Вы заключаете договор франшизы">
+                            <div class="step-card__img ">
+                                <img class="m-none" src="assets/img/main/steps-company/06.png" alt="Вы заключаете договор франшизы">
+                                <img class="active" src="assets/img/main/steps-company/06-m.png" alt="Вы заключаете договор франшизы">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1136,7 +1153,7 @@
                     Заполните форму и узнайте, сколько Вы сможете зарабатывать с франшизой Q-mart
                 </p>
 
-                <img src="assets/img/icons/doubleYellow-arrow.svg" alt="Желтая стрелка">
+                <img class="footer-arrow" src="assets/img/icons/doubleYellow-arrow.svg" alt="Желтая стрелка">
             </div>
 
             <div class="footer-col">
@@ -1259,7 +1276,7 @@
             </h1>
 
             <p class="popup-form__send__subtitle">
-                Проверьте <span id="email-str">{email}</span>, мы уже выслали туда презентацию
+                Проверьте ваш email, мы уже выслали туда презентацию
             </p>
 
             <button class="popup-form__send__close">Отлично</button>
@@ -1306,7 +1323,7 @@
             </h1>
 
             <p class="popup-form__send__subtitle">
-                Проверьте {email}, мы уже выслали туда бизнес-модель
+                Проверьте ваш email, мы уже выслали туда бизнес-модель
             </p>
 
             <button  class="popup-form__send__close">Отлично</button>
@@ -1355,7 +1372,7 @@
             </h1>
 
             <p class="popup-form__send__subtitle">
-                Проверьте {email}, мы уже выслали туда финансовую модель
+                Проверьте ваш email, мы уже выслали туда финансовую модель
             </p>
 
             <button  class="popup-form__send__close">Отлично</button>
@@ -1366,8 +1383,6 @@
 </div>
 
 
-
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/imask"></script>
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script src="assets/js/popUp.js"></script>

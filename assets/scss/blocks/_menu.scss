@@ -49,6 +49,11 @@
     &:hover {
       color: $blue-color;
     }
+
+    @include _992 {
+      font-size: 20px;
+      line-height: 25px;
+    }
   }
 
   @include _1200 {
@@ -60,11 +65,9 @@
     align-items: center;
     justify-content: center;
     gap: 24px;
+    width: 300px;
   }
 
-  @include _992 {
-    font-size: 20px;
-    line-height: 25px;
-  }
+
 }
 
